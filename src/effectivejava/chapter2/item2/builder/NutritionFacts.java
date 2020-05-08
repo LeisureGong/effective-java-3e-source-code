@@ -1,5 +1,7 @@
 package effectivejava.chapter2.item2.builder;
 
+import java.util.TreeMap;
+
 // Builder Pattern  (Page 13)
 public class NutritionFacts {
     private final int servingSize;
