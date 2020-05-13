@@ -29,7 +29,7 @@ public final class PhoneNumber {
 
 
     // Broken with no hashCode; works with any of the three below
-
+//
 //    // Typical hashCode method (Page 52)
 //    @Override public int hashCode() {
 //        int result = Short.hashCode(areaCode);
@@ -43,19 +43,19 @@ public final class PhoneNumber {
 //        return Objects.hash(lineNum, prefix, areaCode);
 //    }
 
-//    // hashCode method with lazily initialized cached hash code  (page 53)
-//    private int hashCode; // Automatically initialized to 0
-//
-//    @Override public int hashCode() {
-//        int result = hashCode;
-//        if (result == 0) {
-//            result = Short.hashCode(areaCode);
-//            result = 31 * result + Short.hashCode(prefix);
-//            result = 31 * result + Short.hashCode(lineNum);
-//            hashCode = result;
-//        }
-//        return result;
-//    }
+    // hashCode method with lazily initialized cached hash code  (page 53)
+    private int hashCode; // Automatically initialized to 0
+
+    @Override public int hashCode() {
+        int result = hashCode;
+        if (result == 0) {
+            result = Short.hashCode(areaCode);
+            result = 31 * result + Short.hashCode(prefix);
+            result = 31 * result + Short.hashCode(lineNum);
+            hashCode = result;
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         Map<PhoneNumber, String> m = new HashMap<>();

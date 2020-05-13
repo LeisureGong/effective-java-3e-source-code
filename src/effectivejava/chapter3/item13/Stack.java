@@ -1,5 +1,6 @@
 package effectivejava.chapter3.item13;
 import java.util.Arrays;
+import java.util.Hashtable;
 
 // A cloneable version of Stack (Pages 60-61)
 public class Stack implements Cloneable {
